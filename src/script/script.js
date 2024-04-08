@@ -1,33 +1,74 @@
-- **CDN Link:** This includes the latest version (0.147) of Three.js from the jsDelivr CDN. You can find alternative CDN providers and versions at [https://www.jsdelivr.com/package/npm/three-js](https://www.jsdelivr.com/package/npm/three-js).
+// Wait for the DOM to be ready before executing Three.js code
+window.addEventListener('DOMContentLoaded', () => {
+  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+  camera.position.z = 5;
 
-**4. JavaScript File (`script.js`):**
+  const renderer = new THREE.WebGLRenderer({ antialias: true });
+  renderer.setSize(window.innerWidth, window.innerHeight);
+  document.body.appendChild(renderer.domElement);
 
-- Create a JavaScript file named `script.js` in your project directory. Your Three.js code to create and render the 3D scene will reside here.
+  const geometry = new THREE.BoxGeometry(1, 1, 1);
+  const material = [
+    new THREE.MeshBasicMaterial({ color: 0xff0000 }), // Red
+    new THREE.MeshBasicMaterial({ color: 0x00ff00 }), // Green
+    new THREE.MeshBasicMaterial({ color: 0x0000ff }), // Blue
+    new THREE.MeshBasicMaterial({ color: 0xffff00 }), // Yellow
+    new THREE.MeshBasicMaterial({ color: 0xff00ff }), // Magenta
+    new THREE.MeshBasicMaterial({ color: 0x00ffff }), // Cyan
+  ]; // Use a material that supports shadows
 
-**5. Basic Three.js Code:**
+  const cube = new THREE.Mesh(geometry, material);
+  scene.add(cube);
 
-- In your `script.js` file, add the following code to create a scene with a camera, renderer, and a cube:
+  // Add a light
+  const light = new THREE.DirectionalLight(0xffffff, 1);
+  light.position.set(10, 10, 10);
+  scene.add(light);
 
-```javascript
-const scene = new THREE.Scene();
-const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-camera.position.z = 5;
+  // Enable shadows
+  renderer.shadowMap.enabled = true;
 
-const renderer = new THREE.WebGLRenderer({ antialias: true });
-renderer.setSize(window.innerWidth, window.innerHeight);
-document.body.appendChild(renderer.domElement);
+  // Allow the cube to cast and receive shadows
+  cube.castShadow = true;
+  cube.receiveShadow = true;
 
-const geometry = new THREE.BoxGeometry(1, 1, 1);
-const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
-const cube = new THREE.Mesh(geometry, material);
-scene.add(cube);
+let isDragging = false;
+  let lastMousePos = { x: 0, y: 0 };
 
-function animate() {
+  // Event listeners for dragging
+  renderer.domElement.addEventListener('mousedown', onMouseDown);
+  renderer.domElement.addEventListener('mouseup', onMouseUp);
+  renderer.domElement.addEventListener('mousemove', onMouseMove);
+
+  function onMouseDown(event) {
+    isDragging = true;
+    lastMousePos = { x: event.clientX, y: event.clientY };
+  }
+
+  function onMouseUp() {
+    isDragging = false;
+  }
+
+  function onMouseMove(event) {
+    if (isDragging) {
+      const deltaX = event.clientX - lastMousePos.x;
+      const deltaY = event.clientY - lastMousePos.y;
+
+      const sensitivity = 0.05; // Adjust sensitivity for smoother dragging
+      cube.position.x += deltaX * sensitivity;
+      cube.position.y -= deltaY * sensitivity; // Invert y-axis for natural dragging
+
+      lastMousePos = { x: event.clientX, y: event.clientY };
+    }
+  }
+
+  function animate() {
     requestAnimationFrame(animate);
     cube.rotation.x += 0.01;
     cube.rotation.y += 0.01;
     renderer.render(scene, camera);
-}
+  }
 
-animate();
-
+  animate();
+});
