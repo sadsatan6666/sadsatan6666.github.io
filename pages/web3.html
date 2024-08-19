@@ -148,8 +148,21 @@
 </head>
 
 <body>
+ <p class="highlighted-text">Let me show you my Simple Grading module, which I created for learning purposes in Odoo 17.
+ <h3 class="s1">Setup </h3>
  <p class="highlighted-text">Let me show you my Simple Grading module, which I created for learning purposes in Odoo 17.</p>
-
+<h3 class="s1">Setup </h3>
+<p class="style_5">$ sudo apt update</p>
+<p class="style_5">$ cd ~ && mkdir test_module</p>
+<p class="style_5">$ cd test_module && git clone "https://github.com/sadsatan6666/Simple-Module"</p>
+<p class="style_5">$ # assuming you already have odoo installed in your system and you are at at '~/test_module'</p>
+<p class="style_5">$ sudo cp -r Simple-Module /usr/lib/python3/dist-packages/odoo/addons/</p>
+<p class="style_5">$ sudo service postgresql restart && sudo service odoo restart</p>
+<p class="style_5">$ #goto the 'localhost:8069'</p>
+<p class="style_5">$ #now goto the 'Apps' and search 'Simple-Module' </p>
+<p class="style_5">$ #Click on The 'Activate' button </p>
+<p class="style_5">$ #And... Bingo... your module is installed it should be seen by clicking on top left corner of odoo interface </p>
+  
   <h3 class="s1">Before</h3>
   <p class="highlighted-text">This is a simple dummy 'Student Grading' module that I made while I was (and still am) learning Odoo.</p>
   <p class="highlighted-text">Before this, I made a simpler module called 'Simple Contact Book'. This module had only two fields:</p>
