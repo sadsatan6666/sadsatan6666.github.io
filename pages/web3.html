@@ -2,6 +2,86 @@
 <html lang="en">
 
 <head>
+    	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+	<meta name="generator" content="Geany 1.37.1" />
+	<meta name="date" content="2024-08-19T10:23:24+0530" />
+	<style type="text/css">
+	body
+	{
+		font-family: Monospace, monospace;
+		font-size: 10pt;
+	}
+    .style_0
+	{
+		color: red;
+		background-color: #000000;
+	}
+	.style_1
+	{
+		color: #808080;
+		background-color: #000000;
+	}
+	.style_2
+	{
+		color: #c80000;
+		background-color: #000000;
+	}
+	.style_3
+	{
+		color: #0099ff;
+		background-color: #000000;
+	}
+	.style_4
+	{
+		color: #0099ff;
+		background-color: #000000;
+	}
+	.style_5
+	{
+		color: #558eff;
+		background-color: #000000;
+		font-weight: bold;
+	}
+	.style_7
+	{
+		color: #0099ff;
+		background-color: #000000;
+	}
+	.style_8
+	{
+		color: #00ff00;
+		background-color: #000000;
+		font-weight: bold;
+	}
+	.style_9
+	{
+		color: #00ff00;
+		background-color: #000000;
+		font-weight: bold;
+	}
+	.style_10
+	{
+		color: #00ff00;
+		background-color: #000000;
+	}
+	.style_11
+	{
+		color: #00ff00;
+		background-color: #000000;
+	}
+	.style_14
+	{
+		color: #aa00aa;
+		background-color: #000000;
+		font-weight: bold;
+	}
+	.style_15
+	{
+		color: #be5f00;
+		background-color: #000000;
+	}
+
+	</style>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>My Web3 Page</title>
@@ -12,11 +92,33 @@
       font-family: monospace; /* Linux terminal font */
       padding: 20px;
       margin: 0;
+      
     }
 
     p {
       margin-bottom: 15px;
     }
+    .highlighted-text {
+  background-color: black; /* Or any desired color */
+  color: 00ff00; /* For contrast */
+  padding: 2px; /* Adjust padding as needed */
+}
+.s1 {
+  background-color: black; /* Or any desired color */
+  color: silver; /* For contrast */
+  padding: 2px; /* Adjust padding as needed */
+}
+.c1 {
+  background-color: black; /* Or any desired color */
+  color: cyan; /* For contrast */
+  padding: 2px; /* Adjust padding as needed */
+}
+ body {
+           // background-image: url('/home/ronin/Videos/git/black1.gif');
+           // background-repeat: no-repeat; /* or repeat, repeat-x, repeat-y */
+           // background-attachment: fixed; /* or scroll */
+           // background-size: cover; /* or contain */
+        }
   </style>
 
   <script type="x-shader/x-vertex" id="vertexshader">
@@ -46,14 +148,180 @@
 </head>
 
 <body>
-  <p>Let me show you my Simple Grading module, which I made for learning purposes in Odoo 17</p>
+ <p class="highlighted-text">Let me show you my Simple Grading module, which I created for learning purposes in Odoo 17.</p>
 
+  <h3 class="s1">Before</h3>
+  <p class="highlighted-text">This is a simple dummy 'Student Grading' module that I made while I was (and still am) learning Odoo.</p>
+  <p class="highlighted-text">Before this, I made a simpler module called 'Simple Contact Book'. This module had only two fields:</p>
+  <ul>
+    <li class="c1">Contact Name</li>
+    <li class="c1">Contact Number</li>
+  </ul>
+  <p class="highlighted-text">Like others, you can add, edit, and delete records.</p>
+  <p class="highlighted-text">I then made changes to that module, which led to the creation of 'Student Grading'.</p>
+
+  <h3 class="s1">After That</h3>
+  <p class="highlighted-text">This module has three major files (excluding __init__.py and __manifest__.py):</p>
+  <ul>
+    <li class="c1">models.py</li>
+    <li class="c1">FieldViews.xml</li>
+    <li class="c1">Menu_and_Action.xml</li>
+  </ul>
+  <h2 class="s1">1:- models.py</h2>
   
-      <h1 class="special">Kesar Urvish <br>
-        <span class="minText">Creative N00B developer</span>
-      </h1>
-    </div>
+  <p>
+<span class="style_1">#&nbsp;-*-&nbsp;coding:&nbsp;utf-8&nbsp;-*-</span><br />
+<br />
+<span class="style_5">from&nbsp;</span><span class="style_11">odoo&nbsp;</span><span class="style_5">import&nbsp;</span><span class="style_11">models</span><span class="style_10">,&nbsp;</span><span class="style_11">fields</span><span class="style_10">,&nbsp;</span><span class="style_11">api</span><br />
+<span class="style_5">from&nbsp;</span><span class="style_11">odoo</span><span class="style_10">.</span><span class="style_11">exceptions&nbsp;</span><span class="style_5">import&nbsp;</span><span class="style_11">ValidationError&nbsp;</span><br />
+<br />
+<span class="style_5">class&nbsp;</span><span class="style_8">simple_contact</span><span class="style_10">(</span><span class="style_11">models</span><span class="style_10">.</span><span class="style_11">Model</span><span class="style_10">):</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_11">_name&nbsp;</span><span class="style_10">=&nbsp;</span><span class="style_4">'simple_contact.simple_contact'</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_11">_description&nbsp;</span><span class="style_10">=&nbsp;</span><span class="style_4">'simple_contact.simple_contact'</span><br />
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_11">description&nbsp;</span><span class="style_10">=&nbsp;</span><span class="style_11">fields</span><span class="style_10">.</span><span class="style_11">Text</span><span class="style_10">(</span><span class="style_4">'Description'</span><span class="style_10">)</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_11">StudentName&nbsp;</span><span class="style_10">=&nbsp;</span><span class="style_11">fields</span><span class="style_10">.</span><span class="style_11">Char</span><span class="style_10">(</span><span class="style_4">'Student&nbsp;Name'</span><span class="style_10">)</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_11">MarkObtained</span><span class="style_10">=&nbsp;</span><span class="style_11">fields</span><span class="style_10">.</span><span class="style_11">Integer</span><span class="style_10">(</span><span class="style_4">'Marks&nbsp;Obtained'</span><span class="style_10">)</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_11">Grade</span><span class="style_10">=&nbsp;</span><span class="style_11">fields</span><span class="style_10">.</span><span class="style_11">Char</span><span class="style_10">(</span><span class="style_11">compute</span><span class="style_10">=</span><span class="style_3">"_GradeFunc"&nbsp;</span><span class="style_10">)</span><br />
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_15">@api</span><span class="style_10">.</span><span class="style_11">depends</span><span class="style_10">(</span><span class="style_4">'value'</span><span class="style_10">)</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_5">def&nbsp;</span><span class="style_9">_value_pc</span><span class="style_10">(</span><span class="style_11">self</span><span class="style_10">):</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_5">for&nbsp;</span><span class="style_11">record&nbsp;</span><span class="style_5">in&nbsp;</span><span class="style_11">self</span><span class="style_10">:</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_11">record</span><span class="style_10">.</span><span class="style_11">value2&nbsp;</span><span class="style_10">=&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="style_14">float</span><span class="style_10">(</span><span class="style_11">record</span><span class="style_10">.</span><span class="style_11">value</span><span class="style_10">)&nbsp;/&nbsp;</span><span class="style_2">100</span><br />
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_15">@api</span><span class="style_10">.</span><span class="style_11">depends</span><span class="style_10">(</span><span class="style_4">'MarkObtained'</span><span class="style_10">)</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_5">def&nbsp;</span><span class="style_9">_GradeFunc&nbsp;</span><span class="style_10">(</span><span class="style_11">self</span><span class="style_10">):</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_7">"""&nbsp;Function&nbsp;doc&nbsp;"""</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_5">for&nbsp;</span><span class="style_11">record&nbsp;</span><span class="style_5">in&nbsp;</span><span class="style_11">self</span><span class="style_10">:</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_5">if&nbsp;</span><span class="style_11">record</span><span class="style_10">.</span><span class="style_11">MarkObtained&nbsp;</span><span class="style_10">&gt;=&nbsp;</span><span class="style_2">90</span><span class="style_10">:</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_11">record</span><span class="style_10">.</span><span class="style_11">Grade</span><span class="style_10">=</span><span class="style_4">'A'</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_5">elif&nbsp;</span><span class="style_11">record</span><span class="style_10">.</span><span class="style_11">MarkObtained&nbsp;</span><span class="style_10">&gt;=&nbsp;</span><span class="style_2">80</span><span class="style_10">:</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_11">record</span><span class="style_10">.</span><span class="style_11">Grade</span><span class="style_10">=</span><span class="style_4">'B+'</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_5">elif&nbsp;</span><span class="style_11">record</span><span class="style_10">.</span><span class="style_11">MarkObtained&nbsp;</span><span class="style_10">&gt;=&nbsp;</span><span class="style_2">70</span><span class="style_10">:</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_11">record</span><span class="style_10">.</span><span class="style_11">Grade</span><span class="style_10">=</span><span class="style_4">'C'</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_5">elif&nbsp;</span><span class="style_11">record</span><span class="style_10">.</span><span class="style_11">MarkObtained&nbsp;</span><span class="style_10">&gt;=&nbsp;</span><span class="style_2">60</span><span class="style_10">:</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_11">record</span><span class="style_10">.</span><span class="style_11">Grade</span><span class="style_10">=</span><span class="style_4">'D'</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_5">elif&nbsp;</span><span class="style_11">record</span><span class="style_10">.</span><span class="style_11">MarkObtained&nbsp;</span><span class="style_10">&gt;=&nbsp;</span><span class="style_2">50</span><span class="style_10">:</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_11">record</span><span class="style_10">.</span><span class="style_11">Grade</span><span class="style_10">=</span><span class="style_4">'E'</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_5">elif&nbsp;</span><span class="style_11">record</span><span class="style_10">.</span><span class="style_11">MarkObtained&nbsp;</span><span class="style_10">&gt;=&nbsp;</span><span class="style_2">40</span><span class="style_10">:</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_11">record</span><span class="style_10">.</span><span class="style_11">Grade</span><span class="style_10">=</span><span class="style_4">'F'</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_5">else</span><span class="style_10">:</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_11">record</span><span class="style_10">.</span><span class="style_11">Grade</span><span class="style_10">=</span><span class="style_3">"Fail"</span><br />
+&nbsp;<br />
+</p>
+  
+    <h2 class="s1">2:- FieldViews.xml</h2>
 
+<p>
+<span class="style_1">&lt;odoo&gt;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_1">&lt;data&gt;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_1">&lt;record&nbsp;</span><span class="style_3">id</span><span class="style_8">=</span><span class="style_6">"view_simple_contact_form"&nbsp;</span><span class="style_3">model</span><span class="style_8">=</span><span class="style_6">"ir.ui.view"</span><span class="style_1">&gt;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_1">&lt;field&nbsp;</span><span class="style_3">name</span><span class="style_8">=</span><span class="style_6">"name"</span><span class="style_1">&gt;</span><span class="style_0">simple_contact.form</span><span class="style_1">&lt;/field&gt;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_1">&lt;field&nbsp;</span><span class="style_3">name</span><span class="style_8">=</span><span class="style_6">"model"</span><span class="style_1">&gt;</span><span class="style_0">simple_contact.simple_contact</span><span class="style_1">&lt;/field&gt;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_1">&lt;field&nbsp;</span><span class="style_3">name</span><span class="style_8">=</span><span class="style_6">"arch"&nbsp;</span><span class="style_3">type</span><span class="style_8">=</span><span class="style_6">"xml"</span><span class="style_1">&gt;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_1">&lt;form&nbsp;</span><span class="style_3">string</span><span class="style_8">=</span><span class="style_6">"Contact"</span><span class="style_1">&gt;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_1">&lt;sheet&gt;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_1">&lt;group&gt;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_1">&lt;field&nbsp;</span><span class="style_3">name</span><span class="style_8">=</span><span class="style_6">"StudentName"</span><span class="style_11">/&gt;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_1">&lt;field&nbsp;</span><span class="style_3">name</span><span class="style_8">=</span><span class="style_6">"MarkObtained"</span><span class="style_11">/&gt;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_1">&lt;field&nbsp;</span><span class="style_3">name</span><span class="style_8">=</span><span class="style_6">"Grade"&nbsp;</span><span class="style_3">readonly</span><span class="style_8">=</span><span class="style_6">"1"</span><span class="style_11">/&gt;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_1">&lt;/group&gt;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_1">&lt;/sheet&gt;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_1">&lt;/form&gt;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_1">&lt;/field&gt;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_1">&lt;/record&gt;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_1">&lt;/data&gt;</span><br />
+<span class="style_1">&lt;/odoo&gt;</span><br />
+
+</p>
+
+
+    <h2 class="s1">3:- Menu_and_Action.xml</h2>
+
+<p>
+<span class="style_1">&lt;odoo&gt;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_1">&lt;data&gt;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_9">&lt;!--&nbsp;Action&nbsp;Window&nbsp;Definition&nbsp;--&gt;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_1">&lt;record&nbsp;</span><span class="style_3">model</span><span class="style_8">=</span><span class="style_6">"ir.actions.act_window"&nbsp;</span><span class="style_3">id</span><span class="style_8">=</span><span class="style_6">"simple_contact_action_window"</span><span class="style_1">&gt;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_1">&lt;field&nbsp;</span><span class="style_3">name</span><span class="style_8">=</span><span class="style_6">"name"</span><span class="style_1">&gt;</span><span class="style_0">SimpleContact&nbsp;window</span><span class="style_1">&lt;/field&gt;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_1">&lt;field&nbsp;</span><span class="style_3">name</span><span class="style_8">=</span><span class="style_6">"res_model"</span><span class="style_1">&gt;</span><span class="style_0">simple_contact.simple_contact</span><span class="style_1">&lt;/field&gt;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_1">&lt;field&nbsp;</span><span class="style_3">name</span><span class="style_8">=</span><span class="style_6">"view_mode"</span><span class="style_1">&gt;</span><span class="style_0">tree,form</span><span class="style_1">&lt;/field&gt;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_1">&lt;/record&gt;</span><br />
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_9">&lt;!--&nbsp;Form&nbsp;View&nbsp;Definition&nbsp;--&gt;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_1">&lt;record&nbsp;</span><span class="style_3">id</span><span class="style_8">=</span><span class="style_6">"view_simple_contact_form"&nbsp;</span><span class="style_3">model</span><span class="style_8">=</span><span class="style_6">"ir.ui.view"</span><span class="style_1">&gt;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_1">&lt;field&nbsp;</span><span class="style_3">name</span><span class="style_8">=</span><span class="style_6">"name"</span><span class="style_1">&gt;</span><span class="style_0">simple_contact.form</span><span class="style_1">&lt;/field&gt;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_1">&lt;field&nbsp;</span><span class="style_3">name</span><span class="style_8">=</span><span class="style_6">"model"</span><span class="style_1">&gt;</span><span class="style_0">simple_contact.simple_contact</span><span class="style_1">&lt;/field&gt;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_1">&lt;field&nbsp;</span><span class="style_3">name</span><span class="style_8">=</span><span class="style_6">"arch"&nbsp;</span><span class="style_3">type</span><span class="style_8">=</span><span class="style_6">"xml"</span><span class="style_1">&gt;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_1">&lt;form&nbsp;</span><span class="style_3">string</span><span class="style_8">=</span><span class="style_6">"Simple&nbsp;Contact"</span><span class="style_1">&gt;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_1">&lt;sheet&gt;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_1">&lt;group&gt;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_1">&lt;field&nbsp;</span><span class="style_3">name</span><span class="style_8">=</span><span class="style_6">"StudentName"</span><span class="style_11">/&gt;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_1">&lt;field&nbsp;</span><span class="style_3">name</span><span class="style_8">=</span><span class="style_6">"MarkRange"</span><span class="style_11">/&gt;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_1">&lt;field&nbsp;</span><span class="style_3">name</span><span class="style_8">=</span><span class="style_6">"Grade"&nbsp;</span><span class="style_3">readonly</span><span class="style_8">=</span><span class="style_6">"1"</span><span class="style_11">/&gt;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_1">&lt;/group&gt;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_1">&lt;/sheet&gt;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_1">&lt;/form&gt;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_1">&lt;/field&gt;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_1">&lt;/record&gt;</span><br />
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_9">&lt;!--&nbsp;Tree&nbsp;View&nbsp;Definition&nbsp;--&gt;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_1">&lt;record&nbsp;</span><span class="style_3">id</span><span class="style_8">=</span><span class="style_6">"view_simple_contact_tree"&nbsp;</span><span class="style_3">model</span><span class="style_8">=</span><span class="style_6">"ir.ui.view"</span><span class="style_1">&gt;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_1">&lt;field&nbsp;</span><span class="style_3">name</span><span class="style_8">=</span><span class="style_6">"name"</span><span class="style_1">&gt;</span><span class="style_0">simple_contact.tree</span><span class="style_1">&lt;/field&gt;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_1">&lt;field&nbsp;</span><span class="style_3">name</span><span class="style_8">=</span><span class="style_6">"model"</span><span class="style_1">&gt;</span><span class="style_0">simple_contact.simple_contact</span><span class="style_1">&lt;/field&gt;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_1">&lt;field&nbsp;</span><span class="style_3">name</span><span class="style_8">=</span><span class="style_6">"arch"&nbsp;</span><span class="style_3">type</span><span class="style_8">=</span><span class="style_6">"xml"</span><span class="style_1">&gt;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_1">&lt;tree&nbsp;</span><span class="style_3">string</span><span class="style_8">=</span><span class="style_6">"Simple&nbsp;Contact"</span><span class="style_1">&gt;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_1">&lt;field&nbsp;</span><span class="style_3">name</span><span class="style_8">=</span><span class="style_6">"StudentName"</span><span class="style_11">/&gt;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_1">&lt;field&nbsp;</span><span class="style_3">name</span><span class="style_8">=</span><span class="style_6">"MarkRange"</span><span class="style_11">/&gt;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_1">&lt;field&nbsp;</span><span class="style_3">name</span><span class="style_8">=</span><span class="style_6">"MarkObtained"</span><span class="style_11">/&gt;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_1">&lt;field&nbsp;</span><span class="style_3">name</span><span class="style_8">=</span><span class="style_6">"Grade"</span><span class="style_11">/&gt;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_1">&lt;/tree&gt;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_1">&lt;/field&gt;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_1">&lt;/record&gt;</span><br />
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_9">&lt;!--&nbsp;Menu&nbsp;Items&nbsp;--&gt;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_1">&lt;menuitem&nbsp;</span><span class="style_3">name</span><span class="style_8">=</span><span class="style_6">"SimpleContact"&nbsp;</span><span class="style_3">id</span><span class="style_8">=</span><span class="style_6">"simple_contact_menu_root"</span><span class="style_11">/&gt;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_1">&lt;menuitem&nbsp;</span><span class="style_3">name</span><span class="style_8">=</span><span class="style_6">"Menu&nbsp;1"&nbsp;</span><span class="style_3">id</span><span class="style_8">=</span><span class="style_6">"simple_contact_menu_1"&nbsp;</span><span class="style_3">parent</span><span class="style_8">=</span><span class="style_6">"simple_contact_menu_root"</span><span class="style_11">/&gt;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_1">&lt;menuitem&nbsp;</span><span class="style_3">name</span><span class="style_8">=</span><span class="style_6">"List"&nbsp;</span><span class="style_3">id</span><span class="style_8">=</span><span class="style_6">"simple_contact_menu_1_list"&nbsp;</span><span class="style_3">parent</span><span class="style_8">=</span><span class="style_6">"simple_contact_menu_1"&nbsp;</span><span class="style_3">action</span><span class="style_8">=</span><span class="style_6">"simple_contact_action_window"</span><span class="style_11">/&gt;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_1">&lt;/data&gt;</span><br />
+<span class="style_1">&lt;/odoo&gt;</span><br />
+
+</p>
+  
+      <h2 class="s1">System Info</h2>
+<p class="c1"> $odoo --version :- Odoo Server 17.0-20240805</p>
+<p class="c1"> $neofetch :- </div>
+<p>
+<span class="style_0">`:oho/-`</span><br />
+<span class="style_0">`mMMMMMMMMMMMNmmdhy-</span><br />
+&nbsp;<span class="style_0">dMMMMMMMMMMMMMMMMMMs`</span><br />
+&nbsp;<span class="style_0">+MMsohNMMMMMMMMMMMMMm/</span><br />
+&nbsp;<span class="style_0">.My&nbsp;&nbsp;&nbsp;.+dMMMMMMMMMMMMMh.</span><br />
+&nbsp;&nbsp;<span class="style_0">+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:NMMMMMMMMMMMMNo</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_0">`yMMMMMMMMMMMMMm:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ronin@Windows7&nbsp;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_0">/NMMMMMMMMMMMMMy`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--------------&nbsp;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_0">.hMMMMMMMMMMMMMN+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;OS:&nbsp;Parrot&nbsp;OS&nbsp;4.11&nbsp;x86_64&nbsp;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_0">``-NMMMMMMMMMd-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Kernel:&nbsp;5.10.0-6parrot1-amd64&nbsp;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_0">/MMMMMMMMMMMs`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Uptime:&nbsp;1&nbsp;hour,&nbsp;35&nbsp;mins&nbsp;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_0">mMMMMMMMsyNMN/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Packages:&nbsp;2373&nbsp;(dpkg)&nbsp;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_0">+MMMMMMMo&nbsp;&nbsp;:sNh.&nbsp;&nbsp;&nbsp;&nbsp;Shell:&nbsp;bash&nbsp;5.1.4&nbsp;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_0">`NMMMMMMm&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-o/&nbsp;&nbsp;&nbsp;Resolution:&nbsp;1024x768&nbsp;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_0">oMMMMMMM.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DE:&nbsp;MATE&nbsp;1.24.1&nbsp;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_0">`NMMMMMM+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;WM:&nbsp;Metacity&nbsp;(Marco)&nbsp;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_0">+MMd/NMh&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Theme:&nbsp;BlackMATE&nbsp;[GTK2/3]&nbsp;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_0">mMm&nbsp;-mN`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Icons:&nbsp;mate&nbsp;[GTK2/3]&nbsp;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_0">/MM&nbsp;&nbsp;`h:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Terminal:&nbsp;terminator&nbsp;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_0">dM`&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CPU:&nbsp;Intel&nbsp;Pentium&nbsp;G620&nbsp;(2)&nbsp;@&nbsp;2.600GHz&nbsp;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_0">:M-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;GPU:&nbsp;Intel&nbsp;2nd&nbsp;Generation&nbsp;Core&nbsp;Processor&nbsp;Family&nbsp;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_0">d:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Memory:&nbsp;2494MiB&nbsp;/&nbsp;10917MiB&nbsp;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_0">-+</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_0">-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
+<br />
+<br />
+
+</p>
     <script>
       const preload = () => {
         let manager = new THREE.LoadingManager();
