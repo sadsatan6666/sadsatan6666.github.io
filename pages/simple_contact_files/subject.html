@@ -1,0 +1,163 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+	<title>/usr/lib/python3/dist-packages/odoo/addons/simple_contact/models/subject.py</title>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+	<meta name="generator" content="Geany 1.37.1" />
+	<meta name="date" content="2024-09-02T10:43:19+0530" />
+	<style type="text/css">
+	body
+	{
+		font-family: Monospace, monospace;
+		font-size: 10pt;
+    background:black
+	}
+	.style_2
+	{
+		color: #c80000;
+		background-color: #000000;
+	}
+	.style_3
+	{
+		color: #0099ff;
+		background-color: #000000;
+	}
+	.style_4
+	{
+		color: #0099ff;
+		background-color: #000000;
+	}
+	.style_5
+	{
+		color: #558eff;
+		background-color: #000000;
+		font-weight: bold;
+	}
+	.style_7
+	{
+		color: #0099ff;
+		background-color: #000000;
+	}
+	.style_8
+	{
+		color: #00ff00;
+		background-color: #000000;
+		font-weight: bold;
+	}
+	.style_9
+	{
+		color: #00ff00;
+		background-color: #000000;
+		font-weight: bold;
+	}
+	.style_10
+	{
+		color: #00ff00;
+		background-color: #000000;
+	}
+	.style_11
+	{
+		color: #00ff00;
+		background-color: #000000;
+	}
+	.style_14
+	{
+		color: #aa00aa;
+		background-color: #000000;
+		font-weight: bold;
+	}
+	.style_15
+	{
+		color: #be5f00;
+		background-color: #000000;
+	}
+
+	</style>
+</head>
+
+<body>
+<p>
+<span class="style_5">from&nbsp;</span><span class="style_11">odoo&nbsp;</span><span class="style_5">import&nbsp;</span><span class="style_11">models</span><span class="style_10">,&nbsp;</span><span class="style_11">fields</span><span class="style_10">,&nbsp;</span><span class="style_11">api</span><br />
+<span class="style_5">from&nbsp;</span><span class="style_11">odoo</span><span class="style_10">.</span><span class="style_11">exceptions&nbsp;</span><span class="style_5">import&nbsp;</span><span class="style_11">ValidationError&nbsp;</span><br />
+<br />
+<span class="style_5">class&nbsp;</span><span class="style_8">subject</span><span class="style_10">(</span><span class="style_11">models</span><span class="style_10">.</span><span class="style_11">Model</span><span class="style_10">):</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_11">_name&nbsp;</span><span class="style_10">=&nbsp;</span><span class="style_4">'simple_contact.subject'</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_11">_description&nbsp;</span><span class="style_10">=&nbsp;</span><span class="style_4">'subjects'</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_11">name</span><span class="style_10">=</span><span class="style_11">fields</span><span class="style_10">.</span><span class="style_11">Char</span><span class="style_10">(</span><span class="style_3">"Subject&nbsp;Name"</span><span class="style_10">)</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_11">student_id</span><span class="style_10">=</span><span class="style_11">fields</span><span class="style_10">.</span><span class="style_11">Many2one</span><span class="style_10">(</span><span class="style_3">"simple_contact.simple_contact"</span><span class="style_10">,</span><span class="style_11">string</span><span class="style_10">=</span><span class="style_3">"Student&nbsp;"</span><span class="style_10">,&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="style_11">domain</span><span class="style_10">=[(</span><span class="style_3">"StudentName"</span><span class="style_10">,&nbsp;</span><span class="style_3">"ilike"</span><span class="style_10">,&nbsp;</span><span class="style_3">"%(search)%"</span><span class="style_10">)])</span><br />
+<br />
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_11">MarkObtained</span><span class="style_10">=&nbsp;</span><span class="style_11">fields</span><span class="style_10">.</span><span class="style_11">Integer</span><span class="style_10">(</span><span class="style_4">'Marks&nbsp;Obtained'</span><span class="style_10">)</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_11">MarkRange</span><span class="style_10">=</span><span class="style_11">fields</span><span class="style_10">.</span><span class="style_11">Integer</span><span class="style_10">(</span><span class="style_3">"Mark&nbsp;Range"</span><span class="style_10">)</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_11">Percentage</span><span class="style_10">=</span><span class="style_11">fields</span><span class="style_10">.</span><span class="style_11">Float</span><span class="style_10">(</span><span class="style_11">compute</span><span class="style_10">=</span><span class="style_3">"_Percentage"&nbsp;</span><span class="style_10">)</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_11">Grade</span><span class="style_10">=&nbsp;</span><span class="style_11">fields</span><span class="style_10">.</span><span class="style_11">Char</span><span class="style_10">(</span><span class="style_11">compute</span><span class="style_10">=</span><span class="style_3">"_GradeFunc"&nbsp;</span><span class="style_10">)</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_11">overall_percentage</span><span class="style_10">=</span><span class="style_11">fields</span><span class="style_10">.</span><span class="style_11">Float</span><span class="style_10">(</span><span class="style_11">compute</span><span class="style_10">=</span><span class="style_3">"_overall_percentage"</span><span class="style_10">,</span><span class="style_11">string</span><span class="style_10">=</span><span class="style_3">"Overall&nbsp;Percentage"</span><span class="style_10">)</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_11">overall_grade</span><span class="style_10">=</span><span class="style_11">fields</span><span class="style_10">.</span><span class="style_11">Char</span><span class="style_10">(</span><span class="style_11">compute</span><span class="style_10">=</span><span class="style_3">"_overall_grade"</span><span class="style_10">,</span><span class="style_11">string</span><span class="style_10">=</span><span class="style_3">"Overall&nbsp;Grade"</span><span class="style_10">)</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_15">@api</span><span class="style_10">.</span><span class="style_11">depends</span><span class="style_10">(</span><span class="style_4">'MarkObtained'</span><span class="style_10">,</span><span class="style_4">'MarkRange'</span><span class="style_10">)</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_5">def&nbsp;</span><span class="style_9">_overall_percentage&nbsp;</span><span class="style_10">(</span><span class="style_11">self</span><span class="style_10">):</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_7">"""&nbsp;Function&nbsp;doc&nbsp;"""</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_5">for&nbsp;</span><span class="style_11">record&nbsp;</span><span class="style_5">in&nbsp;</span><span class="style_11">self</span><span class="style_10">:</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_11">total_marks_obtained</span><span class="style_10">=</span><span class="style_14">sum&nbsp;</span><span class="style_10">(</span><span class="style_11">subject</span><span class="style_10">.</span><span class="style_11">MarkObtained&nbsp;</span><span class="style_5">for&nbsp;</span><span class="style_11">subject&nbsp;</span><span class="style_5">in&nbsp;</span><span class="style_11">self</span><span class="style_10">.</span><span class="style_11">env</span><span class="style_10">[</span><span class="style_4">'simple_contact.subject'</span><span class="style_10">].</span><span class="style_11">search</span><span class="style_10">([]))</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_11">total_marks_range</span><span class="style_10">=</span><span class="style_14">sum</span><span class="style_10">(</span><span class="style_11">subject</span><span class="style_10">.</span><span class="style_11">MarkRange&nbsp;</span><span class="style_5">for&nbsp;</span><span class="style_11">subject&nbsp;</span><span class="style_5">in&nbsp;</span><span class="style_11">self</span><span class="style_10">.</span><span class="style_11">env</span><span class="style_10">[</span><span class="style_4">'simple_contact.subject'</span><span class="style_10">].</span><span class="style_11">search</span><span class="style_10">([]))</span><br />
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_5">if&nbsp;</span><span class="style_11">total_marks_range&nbsp;</span><span class="style_10">&gt;&nbsp;</span><span class="style_2">0</span><span class="style_10">:</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_11">record</span><span class="style_10">.</span><span class="style_11">overall_percentage</span><span class="style_10">=(</span><span class="style_11">total_marks_obtained&nbsp;</span><span class="style_10">/&nbsp;</span><span class="style_11">total_marks_range</span><span class="style_10">)&nbsp;*&nbsp;</span><span class="style_2">100</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_5">else</span><span class="style_10">:</span><br />
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_11">record</span><span class="style_10">.</span><span class="style_11">overall_percentage</span><span class="style_10">=</span><span class="style_2">0</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_15">@api</span><span class="style_10">.</span><span class="style_11">depends</span><span class="style_10">(</span><span class="style_4">'overall_percentage'</span><span class="style_10">)</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_5">def&nbsp;</span><span class="style_9">_overall_grade&nbsp;</span><span class="style_10">(</span><span class="style_11">self</span><span class="style_10">):</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_7">"""&nbsp;Function&nbsp;doc&nbsp;"""</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_5">for&nbsp;</span><span class="style_11">record&nbsp;</span><span class="style_5">in&nbsp;</span><span class="style_11">self</span><span class="style_10">:</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_5">if&nbsp;</span><span class="style_11">record</span><span class="style_10">.</span><span class="style_11">overall_percentage&nbsp;</span><span class="style_10">&gt;=&nbsp;</span><span class="style_2">90</span><span class="style_10">:</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_11">record</span><span class="style_10">.</span><span class="style_11">overall_grade</span><span class="style_10">=</span><span class="style_4">'A'</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_5">elif&nbsp;</span><span class="style_11">record</span><span class="style_10">.</span><span class="style_11">overall_percentage&nbsp;</span><span class="style_10">&gt;=&nbsp;</span><span class="style_2">80</span><span class="style_10">:</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_11">record</span><span class="style_10">.</span><span class="style_11">overall_grade</span><span class="style_10">=</span><span class="style_4">'B+'</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_5">elif&nbsp;</span><span class="style_11">record</span><span class="style_10">.</span><span class="style_11">overall_percentage&nbsp;</span><span class="style_10">&gt;=&nbsp;</span><span class="style_2">70</span><span class="style_10">:</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_11">record</span><span class="style_10">.</span><span class="style_11">overall_grade</span><span class="style_10">=</span><span class="style_4">'C'</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_5">elif&nbsp;</span><span class="style_11">record</span><span class="style_10">.</span><span class="style_11">overall_percentage&nbsp;</span><span class="style_10">&gt;=&nbsp;</span><span class="style_2">60</span><span class="style_10">:</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_11">record</span><span class="style_10">.</span><span class="style_11">overall_grade</span><span class="style_10">=</span><span class="style_4">'D'</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_5">elif&nbsp;</span><span class="style_11">record</span><span class="style_10">.</span><span class="style_11">overall_percentage&nbsp;</span><span class="style_10">&gt;=&nbsp;</span><span class="style_2">50</span><span class="style_10">:</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_11">record</span><span class="style_10">.</span><span class="style_11">overall_grade</span><span class="style_10">=</span><span class="style_4">'E'</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_5">else</span><span class="style_10">:</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_11">record</span><span class="style_10">.</span><span class="style_11">overall_grade</span><span class="style_10">=</span><span class="style_4">'Fail'</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_15">@api</span><span class="style_10">.</span><span class="style_11">depends</span><span class="style_10">(</span><span class="style_4">'MarkObtained'</span><span class="style_10">,</span><span class="style_4">'MarkRange'</span><span class="style_10">)</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_5">def&nbsp;</span><span class="style_9">_Percentage&nbsp;</span><span class="style_10">(</span><span class="style_11">self</span><span class="style_10">):</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_7">"""&nbsp;Function&nbsp;doc&nbsp;"""</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_5">for&nbsp;</span><span class="style_11">record&nbsp;</span><span class="style_5">in&nbsp;</span><span class="style_11">self</span><span class="style_10">:</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_5">if&nbsp;</span><span class="style_11">record</span><span class="style_10">.</span><span class="style_11">MarkRange</span><span class="style_10">:</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_11">record</span><span class="style_10">.</span><span class="style_11">Percentage</span><span class="style_10">=&nbsp;(</span><span class="style_11">record</span><span class="style_10">.</span><span class="style_11">MarkObtained&nbsp;</span><span class="style_10">/&nbsp;</span><span class="style_11">record</span><span class="style_10">.</span><span class="style_11">MarkRange</span><span class="style_10">)&nbsp;*&nbsp;</span><span class="style_2">100</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_5">else</span><span class="style_10">:</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_11">record</span><span class="style_10">.</span><span class="style_11">Percentage</span><span class="style_10">=</span><span class="style_2">0</span><br />
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_15">@api</span><span class="style_10">.</span><span class="style_11">depends</span><span class="style_10">(</span><span class="style_4">'Percentage'</span><span class="style_10">)</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_5">def&nbsp;</span><span class="style_9">_GradeFunc&nbsp;</span><span class="style_10">(</span><span class="style_11">self</span><span class="style_10">):</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_7">"""&nbsp;Function&nbsp;doc&nbsp;"""</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_5">for&nbsp;</span><span class="style_11">record&nbsp;</span><span class="style_5">in&nbsp;</span><span class="style_11">self</span><span class="style_10">:</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_5">if&nbsp;</span><span class="style_11">record</span><span class="style_10">.</span><span class="style_11">Percentage&nbsp;</span><span class="style_10">&gt;=&nbsp;</span><span class="style_2">90</span><span class="style_10">:</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_11">record</span><span class="style_10">.</span><span class="style_11">Grade</span><span class="style_10">=</span><span class="style_4">'A'</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_5">elif&nbsp;</span><span class="style_11">record</span><span class="style_10">.</span><span class="style_11">Percentage&nbsp;</span><span class="style_10">&gt;=&nbsp;</span><span class="style_2">80</span><span class="style_10">:</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_11">record</span><span class="style_10">.</span><span class="style_11">Grade</span><span class="style_10">=</span><span class="style_4">'B+'</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_5">elif&nbsp;</span><span class="style_11">record</span><span class="style_10">.</span><span class="style_11">Percentage&nbsp;</span><span class="style_10">&gt;=&nbsp;</span><span class="style_2">70</span><span class="style_10">:</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_11">record</span><span class="style_10">.</span><span class="style_11">Grade</span><span class="style_10">=</span><span class="style_4">'C'</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_5">elif&nbsp;</span><span class="style_11">record</span><span class="style_10">.</span><span class="style_11">Percentage&nbsp;</span><span class="style_10">&gt;=&nbsp;</span><span class="style_2">60</span><span class="style_10">:</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_11">record</span><span class="style_10">.</span><span class="style_11">Grade</span><span class="style_10">=</span><span class="style_4">'D'</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_5">elif&nbsp;</span><span class="style_11">record</span><span class="style_10">.</span><span class="style_11">Percentage&nbsp;</span><span class="style_10">&gt;=&nbsp;</span><span class="style_2">50</span><span class="style_10">:</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_11">record</span><span class="style_10">.</span><span class="style_11">Grade</span><span class="style_10">=</span><span class="style_4">'E'</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_5">elif&nbsp;</span><span class="style_11">record</span><span class="style_10">.</span><span class="style_11">Percentage&nbsp;</span><span class="style_10">&gt;=&nbsp;</span><span class="style_2">40</span><span class="style_10">:</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_11">record</span><span class="style_10">.</span><span class="style_11">Grade</span><span class="style_10">=</span><span class="style_4">'F'</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_5">else</span><span class="style_10">:</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_11">record</span><span class="style_10">.</span><span class="style_11">Grade</span><span class="style_10">=</span><span class="style_3">"Fail"</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<br />
+&nbsp;&nbsp;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
+
+</p>
+</body>
+</html>
