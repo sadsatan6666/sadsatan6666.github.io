@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+	<title>/usr/lib/python3/dist-packages/odoo/addons/simple_contact/models/models.py</title>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+	<meta name="generator" content="Geany 1.37.1" />
+	<meta name="date" content="2024-09-02T10:42:13+0530" />
+	<style type="text/css">
+	body
+	{
+		font-family: Monospace, monospace;
+		font-size: 10pt;
+	}
+	.style_1
+	{
+		color: #808080;
+		background-color: #000000;
+	}
+	.style_3
+	{
+		color: #0099ff;
+		background-color: #000000;
+	}
+	.style_4
+	{
+		color: #0099ff;
+		background-color: #000000;
+	}
+	.style_5
+	{
+		color: #558eff;
+		background-color: #000000;
+		font-weight: bold;
+	}
+	.style_8
+	{
+		color: #00ff00;
+		background-color: #000000;
+		font-weight: bold;
+	}
+	.style_10
+	{
+		color: #00ff00;
+		background-color: #000000;
+	}
+	.style_11
+	{
+		color: #00ff00;
+		background-color: #000000;
+	}
+
+	</style>
+</head>
+
+<body>
+<p>
+<span class="style_1">#&nbsp;-*-&nbsp;coding:&nbsp;utf-8&nbsp;-*-</span><br />
+<span class="style_5">from&nbsp;</span><span class="style_11">odoo&nbsp;</span><span class="style_5">import&nbsp;</span><span class="style_11">models</span><span class="style_10">,&nbsp;</span><span class="style_11">fields</span><span class="style_10">,&nbsp;</span><span class="style_11">api</span><br />
+<span class="style_5">from&nbsp;</span><span class="style_11">odoo</span><span class="style_10">.</span><span class="style_11">exceptions&nbsp;</span><span class="style_5">import&nbsp;</span><span class="style_11">ValidationError&nbsp;</span><br />
+<br />
+<span class="style_5">class&nbsp;</span><span class="style_8">simple_contact</span><span class="style_10">(</span><span class="style_11">models</span><span class="style_10">.</span><span class="style_11">Model</span><span class="style_10">):</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_11">_name&nbsp;</span><span class="style_10">=&nbsp;</span><span class="style_4">'simple_contact.simple_contact'</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_11">_description&nbsp;</span><span class="style_10">=&nbsp;</span><span class="style_4">'simple_contact.simple_contact'</span><br />
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_11">StudentName&nbsp;</span><span class="style_10">=&nbsp;</span><span class="style_11">fields</span><span class="style_10">.</span><span class="style_11">Char</span><span class="style_10">(</span><span class="style_4">'Student&nbsp;Name'</span><span class="style_10">)</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_11">subject_id</span><span class="style_10">=</span><span class="style_11">fields</span><span class="style_10">.</span><span class="style_11">One2many</span><span class="style_10">(</span><span class="style_3">"simple_contact.subject"</span><span class="style_10">,</span><span class="style_3">"student_id"</span><span class="style_10">,</span><span class="style_11">string</span><span class="style_10">=</span><span class="style_3">"Subject"</span><span class="style_10">)</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_11">description&nbsp;</span><span class="style_10">=&nbsp;</span><span class="style_11">fields</span><span class="style_10">.</span><span class="style_11">Text</span><span class="style_10">(</span><span class="style_4">'Description'</span><span class="style_10">)</span><br />
+<br />
+
+</p>
+</body>
+</html>

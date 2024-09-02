@@ -1,0 +1,143 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+	<title>/usr/lib/python3/dist-packages/odoo/addons/simple_contact/views/Menu_and_Action.xml</title>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+	<meta name="generator" content="Geany 1.37.1" />
+	<meta name="date" content="2024-09-02T10:43:39+0530" />
+	<style type="text/css">
+	body
+	{
+		font-family: Monospace, monospace;
+		font-size: 10pt;
+	}
+	.style_0
+	{
+		color: #00ff00;
+		background-color: #000000;
+	}
+	.style_1
+	{
+		color: #729fcf;
+		background-color: #000000;
+		font-weight: bold;
+	}
+	.style_3
+	{
+		color: #be5f00;
+		background-color: #000000;
+	}
+	.style_6
+	{
+		color: #0099ff;
+		background-color: #000000;
+	}
+	.style_8
+	{
+		color: #00ff00;
+		background-color: #000000;
+	}
+	.style_9
+	{
+		color: #808080;
+		background-color: #000000;
+	}
+	.style_11
+	{
+		color: #7392cf;
+		background-color: #000000;
+		font-weight: bold;
+	}
+
+	</style>
+</head>
+
+<body>
+<p>
+<span class="style_1">&lt;odoo&gt;</span><br />
+<span class="style_1">&lt;data&gt;</span><br />
+<span class="style_9">&lt;!--&nbsp;Action&nbsp;Window&nbsp;Definition,&nbsp;for&nbsp;simple_contact(student)&nbsp;--&gt;</span><br />
+<span class="style_1">&lt;record&nbsp;</span><span class="style_3">model</span><span class="style_8">=</span><span class="style_6">"ir.actions.act_window"&nbsp;</span><span class="style_3">id</span><span class="style_8">=</span><span class="style_6">"simple_contact_action_window"</span><span class="style_1">&gt;</span><br />
+<span class="style_1">&lt;field&nbsp;</span><span class="style_3">name</span><span class="style_8">=</span><span class="style_6">"name"</span><span class="style_1">&gt;</span><span class="style_0">SimpleContact&nbsp;window</span><span class="style_1">&lt;/field&gt;</span><br />
+<span class="style_1">&lt;field&nbsp;</span><span class="style_3">name</span><span class="style_8">=</span><span class="style_6">"res_model"</span><span class="style_1">&gt;</span><span class="style_0">simple_contact.simple_contact</span><span class="style_1">&lt;/field&gt;</span><br />
+<span class="style_1">&lt;field&nbsp;</span><span class="style_3">name</span><span class="style_8">=</span><span class="style_6">"view_mode"</span><span class="style_1">&gt;</span><span class="style_0">tree,form</span><span class="style_1">&lt;/field&gt;</span><br />
+<br />
+<span class="style_1">&lt;/record&gt;</span><br />
+<br />
+<br />
+<span class="style_9">&lt;!--&nbsp;Tree&nbsp;View&nbsp;Definition&nbsp;--&gt;</span><br />
+<span class="style_9">&lt;!--&nbsp;THIS&nbsp;RECORD&nbsp;IS&nbsp;SEEN&nbsp;WHEN&nbsp;I&nbsp;CLICK&nbsp;ON&nbsp;THE&nbsp;MODULE&nbsp;())&nbsp;--&gt;</span><br />
+<span class="style_1">&lt;record&nbsp;</span><span class="style_3">id</span><span class="style_8">=</span><span class="style_6">"view_simple_contact_tree"&nbsp;</span><span class="style_3">model</span><span class="style_8">=</span><span class="style_6">"ir.ui.view"</span><span class="style_1">&gt;</span><br />
+<span class="style_1">&lt;field&nbsp;</span><span class="style_3">name</span><span class="style_8">=</span><span class="style_6">"name"</span><span class="style_1">&gt;</span><span class="style_0">simple_contact.tree</span><span class="style_1">&lt;/field&gt;</span><br />
+<span class="style_1">&lt;field&nbsp;</span><span class="style_3">name</span><span class="style_8">=</span><span class="style_6">"model"</span><span class="style_1">&gt;</span><span class="style_0">simple_contact.simple_contact</span><span class="style_1">&lt;/field&gt;</span><br />
+<span class="style_1">&lt;field&nbsp;</span><span class="style_3">name</span><span class="style_8">=</span><span class="style_6">"arch"&nbsp;</span><span class="style_3">type</span><span class="style_8">=</span><span class="style_6">"xml"</span><span class="style_1">&gt;</span><br />
+<span class="style_1">&lt;tree&nbsp;</span><span class="style_3">string</span><span class="style_8">=</span><span class="style_6">"Simple&nbsp;Contact"</span><span class="style_1">&gt;</span><br />
+<span class="style_1">&lt;field&nbsp;</span><span class="style_3">name</span><span class="style_8">=</span><span class="style_6">"StudentName"</span><span class="style_11">/&gt;</span><br />
+<span class="style_1">&lt;field&nbsp;</span><span class="style_3">name</span><span class="style_8">=</span><span class="style_6">"subject_id"</span><span class="style_11">/&gt;</span><br />
+<span class="style_1">&lt;/tree&gt;</span><br />
+<span class="style_1">&lt;/field&gt;</span><br />
+<span class="style_1">&lt;/record&gt;</span><br />
+<br />
+<br />
+<span class="style_9">&lt;!--&nbsp;Form&nbsp;View&nbsp;Definition&nbsp;--&gt;</span><br />
+<span class="style_1">&lt;record&nbsp;</span><span class="style_3">id</span><span class="style_8">=</span><span class="style_6">"view_simple_contact_form"&nbsp;</span><span class="style_3">model</span><span class="style_8">=</span><span class="style_6">"ir.ui.view"</span><span class="style_1">&gt;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_1">&lt;field&nbsp;</span><span class="style_3">name</span><span class="style_8">=</span><span class="style_6">"name"</span><span class="style_1">&gt;</span><span class="style_0">simple_contact.form</span><span class="style_1">&lt;/field&gt;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_1">&lt;field&nbsp;</span><span class="style_3">name</span><span class="style_8">=</span><span class="style_6">"model"</span><span class="style_1">&gt;</span><span class="style_0">simple_contact.simple_contact</span><span class="style_1">&lt;/field&gt;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_1">&lt;field&nbsp;</span><span class="style_3">name</span><span class="style_8">=</span><span class="style_6">"arch"&nbsp;</span><span class="style_3">type</span><span class="style_8">=</span><span class="style_6">"xml"</span><span class="style_1">&gt;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_1">&lt;form&nbsp;</span><span class="style_3">string</span><span class="style_8">=</span><span class="style_6">"Simple&nbsp;Contact"</span><span class="style_1">&gt;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_1">&lt;sheet&gt;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_1">&lt;group&gt;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_1">&lt;field&nbsp;</span><span class="style_3">name</span><span class="style_8">=</span><span class="style_6">"StudentName"</span><span class="style_11">/&gt;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_1">&lt;field&nbsp;</span><span class="style_3">name</span><span class="style_8">=</span><span class="style_6">"subject_id"</span><span class="style_11">/&gt;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_1">&lt;/group&gt;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_1">&lt;notebook&gt;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_1">&lt;page&nbsp;</span><span class="style_3">string</span><span class="style_8">=</span><span class="style_6">"Subject"</span><span class="style_1">&gt;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_1">&lt;field&nbsp;</span><span class="style_3">name</span><span class="style_8">=</span><span class="style_6">"StudentName"</span><span class="style_11">/&gt;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_1">&lt;field&nbsp;</span><span class="style_3">name</span><span class="style_8">=</span><span class="style_6">"subject_id"</span><span class="style_1">&gt;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_1">&lt;tree&nbsp;</span><span class="style_3">editable</span><span class="style_8">=</span><span class="style_6">"bottom"</span><span class="style_1">&gt;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_1">&lt;field&nbsp;</span><span class="style_3">name</span><span class="style_8">=</span><span class="style_6">"name"</span><span class="style_11">/&gt;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_1">&lt;field&nbsp;</span><span class="style_3">name</span><span class="style_8">=</span><span class="style_6">"MarkObtained"</span><span class="style_11">/&gt;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_1">&lt;field&nbsp;</span><span class="style_3">name</span><span class="style_8">=</span><span class="style_6">"MarkRange"</span><span class="style_11">/&gt;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_1">&lt;field&nbsp;</span><span class="style_3">name</span><span class="style_8">=</span><span class="style_6">"Percentage"</span><span class="style_11">/&gt;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_1">&lt;/tree&gt;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_1">&lt;/field&gt;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_1">&lt;/page&gt;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_1">&lt;page&nbsp;</span><span class="style_3">string</span><span class="style_8">=</span><span class="style_6">"Results"</span><span class="style_1">&gt;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_1">&lt;group&gt;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_1">&lt;field&nbsp;</span><span class="style_3">name</span><span class="style_8">=</span><span class="style_6">"subject_id"</span><span class="style_1">&gt;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_1">&lt;tree&gt;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_1">&lt;field&nbsp;</span><span class="style_3">name</span><span class="style_8">=</span><span class="style_6">"name"&nbsp;</span><span class="style_11">/&gt;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_1">&lt;field&nbsp;</span><span class="style_3">name</span><span class="style_8">=</span><span class="style_6">"overall_percentage"</span><span class="style_11">/&gt;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_1">&lt;field&nbsp;</span><span class="style_3">name</span><span class="style_8">=</span><span class="style_6">"overall_grade"&nbsp;</span><span class="style_11">/&gt;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_1">&lt;/tree&gt;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_1">&lt;/field&gt;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_1">&lt;/group&gt;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_1">&lt;/page&gt;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_1">&lt;/notebook&gt;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_1">&lt;/sheet&gt;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_1">&lt;/form&gt;</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_1">&lt;/field&gt;</span><br />
+<span class="style_1">&lt;/record&gt;</span><br />
+<br />
+<br />
+<br />
+<span class="style_9">&lt;!--&nbsp;Menu&nbsp;Items&nbsp;--&gt;</span><br />
+<span class="style_1">&lt;menuitem&nbsp;</span><span class="style_3">name</span><span class="style_8">=</span><span class="style_6">"SimpleContact"&nbsp;</span><span class="style_3">id</span><span class="style_8">=</span><span class="style_6">"simple_contact_menu_root"</span><span class="style_11">/&gt;</span><br />
+<span class="style_1">&lt;menuitem&nbsp;</span><span class="style_3">name</span><span class="style_8">=</span><span class="style_6">"Menu&nbsp;"&nbsp;</span><span class="style_3">id</span><span class="style_8">=</span><span class="style_6">"simple_contact_menu_1"&nbsp;</span><span class="style_3">parent</span><span class="style_8">=</span><span class="style_6">"simple_contact_menu_root"</span><span class="style_11">/&gt;</span><br />
+<span class="style_1">&lt;menuitem&nbsp;</span><span class="style_3">name</span><span class="style_8">=</span><span class="style_6">"List&nbsp;"&nbsp;</span><span class="style_3">id</span><span class="style_8">=</span><span class="style_6">"simple_contact_menu_1_list"&nbsp;</span><span class="style_3">parent</span><span class="style_8">=</span><span class="style_6">"simple_contact_menu_1"&nbsp;</span><span class="style_3">action</span><span class="style_8">=</span><span class="style_6">"simple_contact_action_window"</span><span class="style_11">/&gt;</span><br />
+<br />
+<br />
+<span class="style_1">&lt;/data&gt;</span><br />
+<span class="style_1">&lt;/odoo&gt;</span><br />
+
+</p>
+</body>
+</html>
