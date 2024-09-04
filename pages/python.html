@@ -32,7 +32,51 @@
   <div class="window-frame">
   <iframe src="brute.html" width="800" height="600"></iframe>
 </div>
-	
+	<h1>WealthMaker Lead Punch Script Documentation</h1>
+
+    <p>This script automates the punching of leads into the WealthMaker API (redacted URL due to security concerns).</p>
+
+    <h2>Functionality</h2>
+
+    <p>The script performs the following actions:</p>
+    <ul>
+        <li>Reads names and mobile numbers from separate text files (`names.txt` and `mobile_numbers.txt`).</li>
+        <li>Ensures both files contain the same number of lines.</li>
+        <li>Iterates through each name and mobile number pair.</li>
+        <li>Constructs a data dictionary with lead information.</li>
+        <li>Sends a POST request to the WealthMaker API with the lead data.</li>
+        <li>Prints the status code and response for each lead.</li>
+    </ul>
+
+    <h2>Important Notes</h2>
+
+    <p>**Security:**</p>
+    <ul>
+        <li>**DO NOT** commit the WealthMaker API URL or token to a public repository. Store them securely using environment variables or a secrets management system.</li>
+        <li>This documentation redacts the URL for demonstration purposes.</li>
+    </ul>
+
+    <h2>Usage</h2>
+
+    <p>**Prerequisites:**</p>
+    <ul>
+        <li>Python 3.x (https://www.python.org/downloads/)</li>
+        <li>Requests library (`pip install requests`)</li>
+    </ul>
+
+    <p>**Instructions:**</p>
+    <ol>
+        <li>Create two text files named `names.txt` and `mobile_numbers.txt` containing names and mobile numbers (one per line, corresponding to each other).</li>
+        <li>Update the environment variables with your WealthMaker API credentials (**DO NOT** commit them to the repository).</li>
+        <li>Run the script from your terminal: `python wealth_maker_lead_punch.py` (replace with the actual script filename).</li>
+    </ol>
+
+    <h2>Technical Details (Optional)</h2>
+
+    <p>The script utilizes the `requests` library to make HTTP requests to the WealthMaker API. The script iterates through each name and mobile number pair, constructing a data dictionary with various lead information. The dictionary is then sent as JSON data in a POST request to the API.</p>
+
+    <p>**Note:** This section can be expanded to provide more details about the data structure and API interaction, depending on your needs.</p>
+
     
 </body>
 </html>
