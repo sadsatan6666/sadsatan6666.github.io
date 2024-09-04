@@ -1,1 +1,147 @@
 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+	<title>/home/ronin/python_play/test.py</title>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+	<meta name="generator" content="Geany 1.37.1" />
+	<meta name="date" content="2024-09-04T09:50:23+0530" />
+	<style type="text/css">
+	body
+	{
+		font-family: Monospace, monospace;
+		font-size: 10pt;
+        background-color:black
+	}
+	.style_1
+	{
+		color: #808080;
+		background-color: #000000;
+	}
+	.style_3
+	{
+		color: #0099ff;
+		background-color: #000000;
+	}
+	.style_4
+	{
+		color: #0099ff;
+		background-color: #000000;
+	}
+	.style_5
+	{
+		color: #558eff;
+		background-color: #000000;
+		font-weight: bold;
+	}
+	.style_10
+	{
+		color: #00ff00;
+		background-color: #000000;
+	}
+	.style_11
+	{
+		color: #00ff00;
+		background-color: #000000;
+	}
+	.style_14
+	{
+		color: #aa00aa;
+		background-color: #000000;
+		font-weight: bold;
+	}
+	.style_16
+	{
+		color: #0099ff;
+		background-color: #000000;
+	}
+
+	</style>
+</head>
+
+<body>
+<p>
+<span class="style_5">import&nbsp;</span><span class="style_11">requests</span><br />
+<br />
+<span class="style_11">url&nbsp;</span><span class="style_10">=&nbsp;</span><span class="style_3">"https://portfolio.wealthmaker.in/wmapi_live/WealthMakerAPIKit.svc/PunchLead"</span><br />
+<span class="style_11">headers&nbsp;</span><span class="style_10">=&nbsp;{</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_3">"Accept"</span><span class="style_10">:&nbsp;</span><span class="style_3">"application/json"</span><span class="style_10">,</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_3">"Accept-Encoding"</span><span class="style_10">:&nbsp;</span><span class="style_3">"gzip,&nbsp;deflate,&nbsp;br,&nbsp;zstd"</span><span class="style_10">,</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_3">"Accept-Language"</span><span class="style_10">:&nbsp;</span><span class="style_3">"en-US,en;q=0.5"</span><span class="style_10">,</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_3">"Connection"</span><span class="style_10">:&nbsp;</span><span class="style_3">"keep-alive"</span><span class="style_10">,</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_3">"Content-Length"</span><span class="style_10">:&nbsp;</span><span class="style_3">"798"</span><span class="style_10">,</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_3">"Content-Type"</span><span class="style_10">:&nbsp;</span><span class="style_3">"application/json"</span><span class="style_10">,</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_3">"Host"</span><span class="style_10">:&nbsp;</span><span class="style_3">"portfolio.wealthmaker.in"</span><span class="style_10">,</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_3">"OriginL"</span><span class="style_10">:&nbsp;</span><span class="style_3">"https"</span><span class="style_10">,</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_3">"Referer"</span><span class="style_10">:&nbsp;</span><span class="style_3">"https"</span><span class="style_10">,</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_3">"Sec-Fetch-Dest"</span><span class="style_10">:&nbsp;</span><span class="style_3">"empty"</span><span class="style_10">,</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_3">"Sec-Fetch-Mode"</span><span class="style_10">:&nbsp;</span><span class="style_3">"cors"</span><span class="style_10">,</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_3">"Sec-Fetch-Site"</span><span class="style_10">:&nbsp;</span><span class="style_3">"cross-site"</span><span class="style_10">,</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_3">"User-Agent"</span><span class="style_10">:&nbsp;</span><span class="style_3">"Mozilla/5.0&nbsp;(X11;&nbsp;Linux&nbsp;x86_64;&nbsp;rv"</span><span class="style_10">,</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_3">"token"</span><span class="style_10">:&nbsp;</span><span class="style_3">"20FB1D857CD58459E063B300008457CB"</span><br />
+<span class="style_10">}</span><br />
+<br />
+<span class="style_1">#&nbsp;Read&nbsp;names&nbsp;and&nbsp;mobile&nbsp;numbers&nbsp;from&nbsp;files</span><br />
+<span class="style_5">with&nbsp;</span><span class="style_14">open</span><span class="style_10">(</span><span class="style_4">'names.txt'</span><span class="style_10">,&nbsp;</span><span class="style_4">'r'</span><span class="style_10">)&nbsp;</span><span class="style_5">as&nbsp;</span><span class="style_11">names_file</span><span class="style_10">,&nbsp;</span><span class="style_14">open</span><span class="style_10">(</span><span class="style_4">'mobile_numbers.txt'</span><span class="style_10">,&nbsp;</span><span class="style_4">'r'</span><span class="style_10">)&nbsp;</span><span class="style_5">as&nbsp;</span><span class="style_11">mobiles_file</span><span class="style_10">:</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_11">names&nbsp;</span><span class="style_10">=&nbsp;</span><span class="style_11">names_file</span><span class="style_10">.</span><span class="style_11">readlines</span><span class="style_10">()</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_11">mobile_numbers&nbsp;</span><span class="style_10">=&nbsp;</span><span class="style_11">mobiles_file</span><span class="style_10">.</span><span class="style_11">readlines</span><span class="style_10">()</span><br />
+<br />
+<span class="style_1">#&nbsp;Ensure&nbsp;both&nbsp;files&nbsp;have&nbsp;the&nbsp;same&nbsp;number&nbsp;of&nbsp;lines</span><br />
+<span class="style_5">if&nbsp;</span><span class="style_14">len</span><span class="style_10">(</span><span class="style_11">names</span><span class="style_10">)&nbsp;!=&nbsp;</span><span class="style_14">len</span><span class="style_10">(</span><span class="style_11">mobile_numbers</span><span class="style_10">):</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_5">print</span><span class="style_10">(</span><span class="style_3">"The&nbsp;number&nbsp;of&nbsp;names&nbsp;and&nbsp;mobile&nbsp;numbers&nbsp;do&nbsp;not&nbsp;match."</span><span class="style_10">)</span><br />
+<span class="style_5">else</span><span class="style_10">:</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_5">for&nbsp;</span><span class="style_11">name</span><span class="style_10">,&nbsp;</span><span class="style_11">mobile&nbsp;</span><span class="style_5">in&nbsp;</span><span class="style_14">zip</span><span class="style_10">(</span><span class="style_11">names</span><span class="style_10">,&nbsp;</span><span class="style_11">mobile_numbers</span><span class="style_10">):</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_11">name&nbsp;</span><span class="style_10">=&nbsp;</span><span class="style_11">name</span><span class="style_10">.</span><span class="style_11">strip</span><span class="style_10">()</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_11">mobile&nbsp;</span><span class="style_10">=&nbsp;</span><span class="style_11">mobile</span><span class="style_10">.</span><span class="style_11">strip</span><span class="style_10">()</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_11">data&nbsp;</span><span class="style_10">=&nbsp;{</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_3">"BranchCD"</span><span class="style_10">:&nbsp;</span><span class="style_3">"10071011"</span><span class="style_10">,</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_3">"FirstName"</span><span class="style_10">:&nbsp;</span><span class="style_11">name</span><span class="style_10">,</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_3">"MobileNo"</span><span class="style_10">:&nbsp;</span><span class="style_11">mobile</span><span class="style_10">,</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_3">"Alt_mobile"</span><span class="style_10">:&nbsp;</span><span class="style_3">""</span><span class="style_10">,</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_3">"Phone"</span><span class="style_10">:&nbsp;</span><span class="style_3">""</span><span class="style_10">,</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_3">"LeadSource"</span><span class="style_10">:&nbsp;</span><span class="style_3">"Door&nbsp;to&nbsp;Door&nbsp;MI&nbsp;Test"</span><span class="style_10">,</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_3">"Married"</span><span class="style_10">:&nbsp;</span><span class="style_3">"Married"</span><span class="style_10">,</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_3">"First_child"</span><span class="style_10">:&nbsp;</span><span class="style_3">""</span><span class="style_10">,</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_3">"SECOND_child"</span><span class="style_10">:&nbsp;</span><span class="style_3">""</span><span class="style_10">,</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_3">"Third_child"</span><span class="style_10">:&nbsp;</span><span class="style_3">""</span><span class="style_10">,</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_3">"Occupation"</span><span class="style_10">:&nbsp;</span><span class="style_3">"Business"</span><span class="style_10">,</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_3">"OCCRemark"</span><span class="style_10">:&nbsp;</span><span class="style_3">"sm"</span><span class="style_10">,</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_3">"CollDate"</span><span class="style_10">:&nbsp;</span><span class="style_3">"31/08/2024"</span><span class="style_10">,</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_3">"DataCollName"</span><span class="style_10">:&nbsp;</span><span class="style_3">"163973"</span><span class="style_10">,</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_3">"FinancialPlan"</span><span class="style_10">:&nbsp;</span><span class="style_3">"NO"</span><span class="style_10">,</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_3">"PersonalLoan"</span><span class="style_10">:&nbsp;</span><span class="style_3">"NO"</span><span class="style_10">,</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_3">"TaxSaving"</span><span class="style_10">:&nbsp;</span><span class="style_3">""</span><span class="style_10">,</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_3">"HealthInsurance"</span><span class="style_10">:&nbsp;</span><span class="style_3">"NO"</span><span class="style_10">,</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_3">"LifeInsurance"</span><span class="style_10">:&nbsp;</span><span class="style_3">"NO"</span><span class="style_10">,</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_3">"UserName"</span><span class="style_10">:&nbsp;</span><span class="style_3">"163973"</span><span class="style_10">,</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_3">"DOB"</span><span class="style_10">:&nbsp;</span><span class="style_3">"09/09/1990"</span><span class="style_10">,</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_3">"BaseMobile"</span><span class="style_10">:&nbsp;</span><span class="style_3">"8128039839"</span><span class="style_10">,</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_3">"SubLeadSource"</span><span class="style_10">:&nbsp;</span><span class="style_3">"DD"</span><span class="style_10">,</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_3">"Email"</span><span class="style_10">:&nbsp;</span><span class="style_3">""</span><span class="style_10">,</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_3">"NoOfChildren"</span><span class="style_10">:&nbsp;</span><span class="style_3">""</span><span class="style_10">,</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_3">"Income"</span><span class="style_10">:&nbsp;</span><span class="style_3">"0"</span><span class="style_10">,</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_3">"City"</span><span class="style_10">:&nbsp;</span><span class="style_3">"-"</span><span class="style_10">,</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_3">"Vehicle"</span><span class="style_10">:&nbsp;</span><span class="style_3">"Four&nbsp;wheeler"</span><span class="style_10">,</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_3">"RequireInformation"</span><span class="style_10">:&nbsp;</span><span class="style_3">"NA"</span><span class="style_10">,</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_3">"BankWith"</span><span class="style_10">:&nbsp;</span><span class="style_3">"Bank&nbsp;with&nbsp;public&nbsp;sector"</span><span class="style_10">,</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_3">"MonthlyIncome"</span><span class="style_10">:&nbsp;</span><span class="style_3">"30000&nbsp;-&nbsp;39999"</span><span class="style_10">,</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_3">"ContactAT"</span><span class="style_10">:&nbsp;</span><span class="style_3">"Morning"</span><span class="style_10">,</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_3">"Distance"</span><span class="style_10">:&nbsp;</span><span class="style_3">"0"</span><span class="style_10">,</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_3">"FamilyAdmitted"</span><span class="style_10">:&nbsp;</span><span class="style_3">"NO"</span><span class="style_10">,</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_3">"EnoughHealthInsurance"</span><span class="style_10">:&nbsp;</span><span class="style_3">"NO"</span><span class="style_10">,</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_3">"ChildEducation"</span><span class="style_10">:&nbsp;</span><span class="style_3">"NO"</span><span class="style_10">,</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_3">"LeadAuditFlag"</span><span class="style_10">:&nbsp;</span><span class="style_3">""</span><span class="style_10">,</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_3">"ClientAddress"</span><span class="style_10">:&nbsp;</span><span class="style_3">""</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_10">}</span><br />
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_11">response&nbsp;</span><span class="style_10">=&nbsp;</span><span class="style_11">requests</span><span class="style_10">.</span><span class="style_11">post</span><span class="style_10">(</span><span class="style_11">url</span><span class="style_10">,&nbsp;</span><span class="style_11">headers</span><span class="style_10">=</span><span class="style_11">headers</span><span class="style_10">,&nbsp;</span><span class="style_11">json</span><span class="style_10">=</span><span class="style_11">data</span><span class="style_10">)</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_5">print</span><span class="style_10">(</span><span class="style_16">f"Status&nbsp;Code&nbsp;for&nbsp;{</span><span class="style_11">name</span><span class="style_16">}:&nbsp;{</span><span class="style_11">response</span><span class="style_10">.</span><span class="style_11">status_code</span><span class="style_16">}"</span><span class="style_10">)</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_5">print</span><span class="style_10">(</span><span class="style_16">f"Response&nbsp;for&nbsp;{</span><span class="style_11">name</span><span class="style_16">}:&nbsp;{</span><span class="style_11">response</span><span class="style_10">.</span><span class="style_11">json</span><span class="style_10">()</span><span class="style_16">}"</span><span class="style_10">)</span><br />
+
+</p>
+</body>
+</html>
