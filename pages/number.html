@@ -1,1 +1,101 @@
 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+	<title>/home/ronin/python_play/numbers.py</title>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+	<meta name="generator" content="Geany 1.37.1" />
+	<meta name="date" content="2024-09-04T12:11:08+0530" />
+	<style type="text/css">
+	body
+	{
+		font-family: Monospace, monospace;
+		font-size: 10pt;
+    background-color:black
+	}
+	.style_1
+	{
+		color: #808080;
+		background-color: #000000;
+	}
+	.style_2
+	{
+		color: #c80000;
+		background-color: #000000;
+	}
+	.style_4
+	{
+		color: #0099ff;
+		background-color: #000000;
+	}
+	.style_5
+	{
+		color: #558eff;
+		background-color: #000000;
+		font-weight: bold;
+	}
+	.style_7
+	{
+		color: #0099ff;
+		background-color: #000000;
+	}
+	.style_9
+	{
+		color: #00ff00;
+		background-color: #000000;
+		font-weight: bold;
+	}
+	.style_10
+	{
+		color: #00ff00;
+		background-color: #000000;
+	}
+	.style_11
+	{
+		color: #00ff00;
+		background-color: #000000;
+	}
+	.style_14
+	{
+		color: #aa00aa;
+		background-color: #000000;
+		font-weight: bold;
+	}
+
+	</style>
+</head>
+
+<body>
+<p>
+<span class="style_5">import&nbsp;</span><span class="style_11">random</span><br />
+<br />
+<span class="style_5">def&nbsp;</span><span class="style_9">generate_random_10_digit_number</span><span class="style_10">(</span><span class="style_11">prefix</span><span class="style_10">):</span><br />
+&nbsp;&nbsp;<span class="style_7">"""Generates&nbsp;a&nbsp;random&nbsp;10-digit&nbsp;number&nbsp;starting&nbsp;with&nbsp;the&nbsp;given&nbsp;prefix.</span><br />
+<br />
+&nbsp;&nbsp;<span class="style_7">Args:</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_7">prefix:&nbsp;The&nbsp;3-digit&nbsp;prefix&nbsp;for&nbsp;the&nbsp;number.</span><br />
+<br />
+&nbsp;&nbsp;<span class="style_7">Returns:</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="style_7">A&nbsp;10-digit&nbsp;random&nbsp;number&nbsp;starting&nbsp;with&nbsp;the&nbsp;prefix.</span><br />
+&nbsp;&nbsp;<span class="style_7">"""</span><br />
+<br />
+&nbsp;&nbsp;<span class="style_1">#&nbsp;Generate&nbsp;a&nbsp;random&nbsp;7-digit&nbsp;number</span><br />
+&nbsp;&nbsp;<span class="style_11">suffix&nbsp;</span><span class="style_10">=&nbsp;</span><span class="style_11">random</span><span class="style_10">.</span><span class="style_11">randint</span><span class="style_10">(</span><span class="style_2">1000000</span><span class="style_10">,&nbsp;</span><span class="style_2">9999999</span><span class="style_10">)</span><br />
+<br />
+&nbsp;&nbsp;<span class="style_1">#&nbsp;Combine&nbsp;the&nbsp;prefix&nbsp;and&nbsp;suffix</span><br />
+&nbsp;&nbsp;<span class="style_5">return&nbsp;</span><span class="style_14">int</span><span class="style_10">(</span><span class="style_14">str</span><span class="style_10">(</span><span class="style_11">prefix</span><span class="style_10">)&nbsp;+&nbsp;</span><span class="style_14">str</span><span class="style_10">(</span><span class="style_11">suffix</span><span class="style_10">))</span><br />
+<br />
+<span class="style_1">#&nbsp;List&nbsp;of&nbsp;allowed&nbsp;prefixes</span><br />
+<span class="style_11">prefixes&nbsp;</span><span class="style_10">=&nbsp;[</span><span class="style_4">'782'</span><span class="style_10">,&nbsp;</span><span class="style_4">'635'</span><span class="style_10">,&nbsp;</span><span class="style_4">'812'</span><span class="style_10">,&nbsp;</span><span class="style_4">'997'</span><span class="style_10">,&nbsp;</span><span class="style_4">'987'</span><span class="style_10">,&nbsp;</span><span class="style_4">'787'</span><span class="style_10">,&nbsp;</span><span class="style_4">'840'</span><span class="style_10">,&nbsp;</span><span class="style_4">'969'</span><span class="style_10">,&nbsp;</span><span class="style_4">'932'</span><span class="style_10">,&nbsp;</span><span class="style_4">'720'</span><span class="style_10">,&nbsp;</span><span class="style_4">'730'</span><span class="style_10">,&nbsp;</span><span class="style_4">'797'</span><span class="style_10">,&nbsp;</span><span class="style_4">'932'</span><span class="style_10">,&nbsp;</span><span class="style_4">'971'</span><span class="style_10">,&nbsp;</span><span class="style_4">'981'</span><span class="style_10">,&nbsp;</span><span class="style_4">'982'</span><span class="style_10">]</span><br />
+<br />
+<span class="style_1">#&nbsp;Generate&nbsp;10&nbsp;random&nbsp;numbers</span><br />
+<span class="style_5">for&nbsp;</span><span class="style_11">_&nbsp;</span><span class="style_5">in&nbsp;</span><span class="style_14">range</span><span class="style_10">(</span><span class="style_2">200</span><span class="style_10">):</span><br />
+&nbsp;&nbsp;<span class="style_11">prefix&nbsp;</span><span class="style_10">=&nbsp;</span><span class="style_11">random</span><span class="style_10">.</span><span class="style_11">choice</span><span class="style_10">(</span><span class="style_11">prefixes</span><span class="style_10">)</span><br />
+&nbsp;&nbsp;<span class="style_11">random_number&nbsp;</span><span class="style_10">=&nbsp;</span><span class="style_11">generate_random_10_digit_number</span><span class="style_10">(</span><span class="style_11">prefix</span><span class="style_10">)</span><br />
+&nbsp;&nbsp;<span class="style_5">print</span><span class="style_10">(</span><span class="style_11">random_number</span><span class="style_10">)</span><br />
+
+</p>
+</body>
+</html>
